@@ -1,0 +1,37 @@
+{
+  "name": "studio-jbth",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "format": "prettier --write .",
+    "lint": "prettier --check . && eslint ."
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^0.0.18",
+    "@sveltejs/adapter-vercel": "^5.7.2",
+    "@sveltejs/kit": "^2.22.2",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "prettier": "^3.4.2",
+    "prettier-plugin-svelte": "^3.3.3",
+    "svelte": "^5.0.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@sveltejs/adapter-static": "^3.0.8",
+    "nodemailer": "^7.0.5"
+  }
+}

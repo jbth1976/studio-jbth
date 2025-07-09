@@ -254,13 +254,57 @@
 .carousel-btn.left { left: 15px; }
 .carousel-btn.right { right: 15px; }
 
-/* ======== Responsivité ======== */
-@media (max-width: 768px) {
-    .carousel-track img { max-height: 320px; }
+/* ======== Responsivité Mobile UNIQUEMENT ======== */
+@media screen and (max-width: 768px) {
+    .carrousel-perso {
+        width: 100%;
+        max-width: 400px; /* limite propre en mobile */
+        margin: 2rem auto;
+        padding-top: 1rem;
+    }
+
+    .carousel-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .carousel-track {
+        display: flex;
+        align-items: center;
+    }
+
+    .carousel-track img {
+        max-height: 220px;
+        width: auto; /* plus de 100% qui décale */
+        object-fit: contain;
+        border-radius: 1rem;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .carousel-btn {
+        font-size: 1.2rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .carousel-btn.left { left: 10px; }
+    .carousel-btn.right { right: 10px; }
 }
 
-@media (max-width: 480px) {
-    .carousel-track img { max-height: 220px; }
+@media screen and (max-width: 480px) {
+    .carousel-track img {
+        max-height: 180px;
+    }
+
+    .carousel-btn {
+        font-size: 1rem;
+        padding: 0.25rem 0.4rem;
+    }
 }
+
   </style>
   

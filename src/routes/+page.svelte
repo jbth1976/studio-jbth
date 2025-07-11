@@ -213,6 +213,17 @@
   }
   
   /* ====== Responsive ====== */
+  @media (max-width: 768px) {
+  .expertise-video-grid .video-container:nth-of-type(n+4) {
+    display: none;
+  }
+}
+
+  @media (max-width: 768px) {
+  .carousel-side {
+    display: none;
+  }
+}
   @media (max-width: 1024px) {
     .page-layout {
       display: flex;

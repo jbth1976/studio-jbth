@@ -27,7 +27,9 @@
 <div class="container-wrapper">
   <section class="services-container">
     <h1>Nos Services</h1>
-    <p class="intro">Des prestations simples et efficaces, adaptées aux auteurs, créateurs et entrepreneurs, sans complexité inutile.</p>
+    <p class="intro">
+      Des prestations simples et efficaces, adaptées aux auteurs, créateurs et entrepreneurs, sans complexité inutile.
+    </p>
 
     <h2>💻 Développement Web</h2>
     <ul class="service-list">
@@ -38,9 +40,18 @@
 
     <h2>🎨 Graphisme & Branding</h2>
     <ul class="service-list">
-      <li><strong>Logo Starter</strong> (IA assisté, 1 proposition + modif) — <span>90 €</span></li>
-      <li><strong>Logo Pro</strong> (kit mini branding) — <span>180 €</span></li>
-      <li><strong>Logo Premium</strong> (animation + déclinaisons) — <span>250 €</span></li>
+      <li>
+        <strong>Logo Starter</strong> (IA assisté, 1 proposition + retouche) — <span>90 €</span><br>
+        Une base rapide, conçue à l’aide d’IA et retravaillée manuellement pour les petits budgets ou projets personnels.
+      </li>
+      <li>
+        <strong>Logo Pro</strong> (kit mini branding) — <span>280 €</span><br>
+        Création sur mesure avec variantes, couleurs, typographies + une mini-charte graphique. Parfait pour un lancement pro.
+      </li>
+      <li>
+        <strong>Logo Premium</strong> (animation + déclinaisons complètes) — <span>520 €</span><br>
+        Identité visuelle complète avec animations, déclinaisons tous supports, export multi-formats + charte graphique détaillée.
+      </li>
       <li><strong>Templates réseaux sociaux</strong> — <span>90 €/lot</span></li>
       <li><strong>Visuels publicitaires</strong> — <span>70 €</span></li>
     </ul>

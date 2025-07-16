@@ -20,34 +20,46 @@
 </footer>
 
 <style>
+  :global(body) {
+    margin: 0;
+    padding: 0;
+  }
+
   .footer {
     background: rgba(0, 0, 0, 0.85);
     color: white;
-    padding: 1.5rem 2rem;
+    padding: 2rem 1.5rem;
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(0, 255, 255, 0.2);
     width: 100%;
+    box-sizing: border-box;
   }
 
   .footer__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
     max-width: 1280px;
     margin: 0 auto;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
   }
 
   .footer__copyright {
-    margin: 0;
     font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .footer__nav {
+    width: 100%;
   }
 
   .footer__links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
     margin: 0;
     padding: 0;
   }
@@ -63,15 +75,19 @@
     color: cyan;
   }
 
-  @media (max-width: 768px) {
-    .footer__content {
-      flex-direction: column;
-      text-align: center;
+  /* Mobile : marge latérale harmonieuse, centrage propre */
+  @media (max-width: 420px) {
+    .footer {
+      padding: 2rem 1rem;
     }
 
     .footer__links {
       flex-direction: column;
       gap: 0.75rem;
+    }
+
+    .footer__content {
+      gap: 1rem;
     }
   }
 </style>

@@ -17,27 +17,28 @@
 </script>
 
 <div class="page-layout">
-  <div class="carousel-side">
+  <div class="carousel-side desktop-only">
     <Carousel images={leftImages} />
   </div>
 
   <section class="main-content">
     <h2 class="main-title">Des idées qui prennent vie</h2>
     <p class="subtitle">Sites web, design graphique et créations éditoriales</p>
+    <a href="#expertise" class="cta-button">Voir mes expertises</a>
   </section>
 
-  <div class="carousel-side">
+  <div class="carousel-side desktop-only">
     <Carousel images={rightImages} />
   </div>
 </div>
 
 <DividerNeon />
 
-<section class="expertise-horizontal">
-  <h2>Mes domaines d'expertise</h2>
+<section class="expertise-horizontal" id="expertise">
+  <h2 class="expertise-heading">Mes domaines d'expertise</h2>
 
   <div class="expertise-video-grid">
-    {#each [1,2,3,4,5,6] as n}
+    {#each [1, 2, 3, 4, 5, 6] as n}
       <div class="video-container">
         <video src={`/videos/img${n}.mp4`} autoplay muted loop playsinline class="expertise-video"></video>
       </div>
@@ -63,7 +64,6 @@
 <ChatBot customClass="chat-bot" />
 
 <style>
-  /* ====== Layout principal ====== */
   .page-layout {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -73,15 +73,14 @@
     padding: 3rem 2rem;
     align-items: start;
   }
-  
-  /* ====== Carrousel latéral ====== */
+
   .carousel-side {
     width: 240px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .carousel-side :global(.carousel) {
     width: 100%;
     height: 250px;
@@ -89,60 +88,79 @@
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
   }
-  
-  .carousel-side :global(img) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* ====== Contenu principal ====== */
+
   .main-content {
     text-align: center;
     padding: 2rem 0;
   }
-  
+
   .main-title {
-    font-size: 2.4rem;
-    color: #00ffff;
-    text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #111;
     margin-bottom: 1rem;
   }
-  
+
   .subtitle {
-    font-size: 1.2rem;
-    color: #c0fefe;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 2rem;
   }
-  
-  /* ====== Section Expertise ====== */
+
+  .cta-button {
+    background-color: #00ffff;
+    color: #000;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  }
+
   .expertise-horizontal {
     margin: 5rem auto;
     max-width: 1200px;
     padding: 0 1rem;
     text-align: center;
   }
-  
-  .expertise-horizontal h2 {
-    font-size: 2rem;
-    color: #00ffff;
-    text-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+
+  .expertise-heading {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #111;
     margin-bottom: 2.5rem;
+    position: relative;
   }
-  
-  /* ====== Grille des vidéos ====== */
+
+  .expertise-heading::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 3px;
+    margin: 8px auto 0;
+    background: linear-gradient(to right, #00f5ff, #00cfff);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+  }
+
   .expertise-video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     justify-items: center;
     margin-bottom: 4rem;
   }
-  
+
   .video-container {
     position: relative;
   }
-  
+
   .video-container::after {
     content: "";
     position: absolute;
@@ -157,85 +175,93 @@
     pointer-events: none;
     filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.7));
   }
-  
+
   .expertise-video {
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
     border-radius: 16px;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
     object-fit: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  
+
   .expertise-video:hover {
     transform: scale(1.02);
     box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
   }
-  
-  /* ====== Grille des cartes ====== */
+
   .expertise-grid-horizontal {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: nowrap;
     gap: 2rem;
     margin-top: 2rem;
   }
-  
+
   .card {
-    background: rgba(255, 255, 255, 0.08);
+    background: #101215;
     padding: 2.5rem;
-    width: 360px;
+    flex: 1 1 0;
+    max-width: 360px;
     border-radius: 16px;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
-    color: #ffffff;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.08);
+    color: #eafcff;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   }
-  
+
   .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.25);
+    background: #1c1f22;
   }
-  
+
   .card h3 {
-    font-size: 1.5rem;
-    color: #00ffff;
-    margin-bottom: 0.6rem;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    font-size: 1.6rem;
+    color: #00f5ff;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
   }
-  
+
   .card p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.6;
-    color: #e0f7ff;
+    color: #c6f7ff;
     opacity: 0.95;
   }
-  
-  /* ====== Responsive ====== */
-  @media (max-width: 768px) {
-  .expertise-video-grid .video-container:nth-of-type(n+4) {
-    display: none;
+
+  /* ----------- Responsive Design ----------- */
+  @media (max-width: 1024px) {
+    .expertise-grid-horizontal {
+      flex-wrap: wrap;
+    }
   }
-}
 
   @media (max-width: 768px) {
-  .carousel-side {
-    display: none;
-  }
-}
-  @media (max-width: 1024px) {
-    .page-layout {
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 1rem;
-    }
     .carousel-side {
-      margin-bottom: 1.5rem;
+      display: none;
     }
-    .card {
-      width: 90%;
-      padding: 2rem;
+
+    .expertise-video-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .expertise-video-grid .video-container:nth-of-type(n+2) {
+      display: none;
+    }
+
+    .expertise-grid-horizontal {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .main-title {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
     }
   }
-  </style>
+</style>

@@ -1,48 +1,112 @@
 @import 'tailwindcss';
 
+/* ------- BASE GLOBALE ------- */
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #000000;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333;
     overflow-x: hidden;
-    font-family: sans-serif;
-    color: white;
 }
 
 * {
     box-sizing: border-box;
 }
 
-.card h3 {
-    color: #00ffff;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #111;
 }
 
+/* ------- TRANSITION HEADER -> SECTION BLANCHE ------- */
+.transition-wave {
+    margin-top: -1px;
+    background: linear-gradient(to bottom, #0c0c0c, #ffffff 90%);
+    height: 60px;
+}
+
+/* ------- CARDS GLOBALES ------- */
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-align: center;
+    color: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #00ffff;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+.card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #e0f7ff;
+    opacity: 0.95;
+}
+
+/* ------- BOUTONS ------- */
+.button-cyan {
+    background-color: #00bcd4;
+    color: #fff;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+    transition: background 0.3s ease;
+}
+
+.button-cyan:hover {
+    background-color: #009db6;
+}
+
+/* ------- AUDIO / CHAT BUTTON ------- */
+.audio-toggle,
+.chat-button {
+    position: fixed;
+    border-radius: 9999px;
+    background-color: #00bcd4;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------- RESPONSIVE ------- */
 @media screen and (max-width: 768px) {
     .audio-toggle {
         font-size: 1.2rem !important;
         padding: 0.4rem 0.5rem !important;
         bottom: 15px !important;
         left: 15px !important;
-        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5) !important;
     }
-}
 
-@media screen and (max-width: 768px) {
     .chat-button {
-        padding: 0.4rem 0.5rem !important;
-        font-size: 1.2rem !important;
         width: 50px !important;
         height: 50px !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-size: 1.2rem !important;
         bottom: 15px !important;
         right: 15px !important;
-        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5) !important;
     }
 
     .chatbox {

@@ -82,7 +82,6 @@
     {/if}
   </section>
 </div>
-
 <style>
   /* Conteneur principal centré avec fond */
   .container-wrapper {

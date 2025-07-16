@@ -16,16 +16,22 @@
   ];
 </script>
 
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-text">
+      <h2 class="hero-title">Des idées qui prennent vie</h2>
+      <p class="hero-subtitle">
+        Sites web, design graphique et créations éditoriales
+      </p>
+      <a href="#expertise" class="hero-button">Voir mes expertises</a>
+    </div>
+  </div>
+</section>
+
 <div class="page-layout">
   <div class="carousel-side desktop-only">
     <Carousel images={leftImages} />
   </div>
-
-  <section class="main-content">
-    <h2 class="main-title">Des idées qui prennent vie</h2>
-    <p class="subtitle">Sites web, design graphique et créations éditoriales</p>
-    <a href="#expertise" class="cta-button">Voir mes expertises</a>
-  </section>
 
   <div class="carousel-side desktop-only">
     <Carousel images={rightImages} />
@@ -64,13 +70,58 @@
 <ChatBot customClass="chat-bot" />
 
 <style>
+  .hero-section {
+    padding: 3rem 1rem 1rem;
+    background-color: #fff;
+    width: 100%;
+  }
+
+  .hero-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-button {
+    background: #00ffff;
+    color: #000;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  .hero-button:hover {
+    background: #00d4d4;
+  }
+
   .page-layout {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto auto;
     gap: 2rem;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 2rem;
+    justify-content: center;
     align-items: start;
   }
 
@@ -87,41 +138,6 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
-  }
-
-  .main-content {
-    text-align: center;
-    padding: 2rem 0;
-  }
-
-  .main-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 1rem;
-  }
-
-  .subtitle {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #444;
-    margin-bottom: 2rem;
-  }
-
-  .cta-button {
-    background-color: #00ffff;
-    color: #000;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border-radius: 999px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-
-  .cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
   }
 
   .expertise-horizontal {
@@ -231,7 +247,6 @@
     opacity: 0.95;
   }
 
-  /* ----------- Responsive Design ----------- */
   @media (max-width: 1024px) {
     .expertise-grid-horizontal {
       flex-wrap: wrap;
@@ -256,12 +271,12 @@
       align-items: center;
     }
 
-    .main-title {
+    .hero-title {
       font-size: 2rem;
     }
 
-    .subtitle {
-      font-size: 1.1rem;
+    .hero-subtitle {
+      font-size: 1rem;
     }
   }
 </style>

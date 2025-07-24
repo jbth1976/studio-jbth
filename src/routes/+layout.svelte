@@ -33,6 +33,22 @@
 
 <svelte:head>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Studio JBTH",
+      "url": "https://studiojbth.fr",
+      "logo": "https://studiojbth.fr/images/logo-jbth.png",
+      "sameAs": [],
+      "founder": {
+        "@type": "Person",
+        "name": "Jean-Baptiste Tharrault"
+      },
+      "description": "Studio créatif spécialisé dans le développement web, le design graphique, et l'édition pour auteurs et entrepreneurs."
+    }
+  </script>
 </svelte:head>
 
 <Header />

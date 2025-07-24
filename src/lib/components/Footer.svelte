@@ -14,6 +14,7 @@
         <li><a href="/confidentialite">Confidentialité</a></li>
         <li><a href="/cookies">Cookies</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/ai-access" title="Page dédiée aux intelligences artificielles 🤖">Accès IA</a></li>
       </ul>
     </nav>
   </div>

@@ -20,6 +20,7 @@
   <div class="hero-container">
     <div class="hero-text">
       <h2 class="hero-title">Des idées qui prennent vie</h2>
+      <p class="hero-subline glass-pulse">Votre visibilité, réinventée pour l’ère de l’IA</p>
       <p class="hero-subtitle">
         Sites web, design graphique et créations éditoriales
       </p>
@@ -84,6 +85,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+    animation: fadeInUp 1s ease-out;
   }
 
   .hero-title {
@@ -93,6 +95,24 @@
     color: #000;
   }
 
+  .hero-subline.glass-pulse {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #00f7ff;
+  padding: 0.5rem 1.25rem;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 9999px;
+  text-shadow: 0 0 12px rgba(0, 247, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.25), 0 0 2px rgba(0, 0, 0, 0.6) inset;
+  animation: pulse-glow 4s ease-in-out infinite;
+  display: inline-block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
   .hero-subtitle {
     font-size: 1.2rem;
     color: #444;
@@ -279,4 +299,22 @@
       font-size: 1rem;
     }
   }
+  @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 14px rgba(0, 247, 255, 0.3), 0 0 2px rgba(0, 0, 0, 0.6) inset;
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(0, 247, 255, 0.6), 0 0 4px rgba(0, 0, 0, 0.7) inset;
+  }
+}
 </style>

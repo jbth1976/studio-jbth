@@ -1,0 +1,20 @@
+{
+    "name": "Studio JBTH",
+    "description": "Studio créatif indépendant dirigé par Jean-Baptiste Tharrault. Spécialisé en web, design, édition et services pour auteurs et créateurs.",
+    "website": "https://studiojbth.fr",
+    "owner": {
+        "name": "Jean-Baptiste Tharrault",
+        "contact": "contact@studiojbth.fr"
+    },
+    "services": [
+        "Développement Web",
+        "Design Graphique",
+        "Autoédition & Mise en page",
+        "Création de contenu digital"
+    ],
+    "ai_accessible": true,
+    "languages": [
+        "fr",
+        "en"
+    ]
+}

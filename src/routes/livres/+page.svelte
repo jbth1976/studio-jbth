@@ -75,156 +75,130 @@
 </div>
 
 <style>
-  /* ===== Fond global étendu ===== */
+  /* ===== Fond global ===== */
   .livres-wrapper {
     background-color: #111;
     width: 100%;
     min-height: 100vh;
-    padding: 4rem 0;
+    padding: 3rem 0;
   }
 
-  /* ===== Conteneur centré ===== */
   .livres-container {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
 
-  /* ===== Hero Section ===== */
+  /* ===== Hero ===== */
   .hero-livres {
     text-align: center;
-    padding: 2rem 1rem 2rem;
+    padding: 1.5rem 1rem;
     color: #e0f7ff;
   }
 
   .hero-livres h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #00ffff;
     text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   .hero-livres p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #c0fefe;
-    max-width: 700px;
+    max-width: 650px;
     margin: 0 auto;
   }
 
-  /* ===== Books Grid ===== */
+  /* ===== Grille ===== */
   .books-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.8rem;
+    gap: 1.5rem;
     padding: 2rem 0;
   }
 
-  /* ===== Book Card ===== */
+  /* ===== Cartes ===== */
   .book-card {
     background: rgba(255, 255, 255, 0.04);
     border-radius: 14px;
     padding: 1rem;
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-  }
-
-  .book-card:hover {
-    transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.07);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
-  }
-
-  /* ===== Book Cover ===== */
-  .book-cover {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .book-cover:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
+  .book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
   }
 
-  /* ===== Text ===== */
+  /* ===== Images ===== */
+  .book-cover {
+    max-width: 200px;      /* limite largeur */
+    width: 100%;
+    margin: 0 auto 0.8rem; /* centrage */
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .book-cover:hover {
+    transform: scale(1.03);
+  }
+
+  /* ===== Titres & texte ===== */
   .book-card h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #00ffff;
-    margin: 0.8rem 0 0.4rem;
+    margin-bottom: 0.4rem;
   }
 
   .book-card .subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #e0f7ff;
     opacity: 0.9;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 
   .book-card .publisher {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #00ffff;
-    opacity: 0.8;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
-  /* ===== CTA Button ===== */
+  /* ===== Boutons ===== */
   .cta-button {
     display: inline-block;
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1.2rem;
     background: linear-gradient(135deg, #00f7ff, #0cf);
     color: #000;
-    font-weight: 600;
+    font-weight: bold;
     border-radius: 25px;
     text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
+    transition: background 0.3s ease;
   }
 
   .cta-button:hover {
-    transform: scale(1.05);
     background: linear-gradient(135deg, #0cf, #00f7ff);
   }
 
-  /* ===== Collaboration Section ===== */
-  .collaboration-section {
-    text-align: center;
-    padding: 4rem 1rem;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .collaboration-section h2 {
-    font-size: 2rem;
-    color: #00ffff;
-    text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-    margin-bottom: 1rem;
-  }
-
-  .collaboration-section p {
-    font-size: 1.1rem;
-    color: #c0fefe;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-  }
-
   /* ===== Responsive ===== */
-  @media (max-width: 768px) {
-    .hero-livres h1 {
-      font-size: 2rem;
-    }
-
-    .collaboration-section h2 {
-      font-size: 1.6rem;
-    }
-  }
-
   @media (max-width: 480px) {
     .book-cover {
-      height: 260px;
+      max-width: 160px;   /* plus petit sur mobile */
+      margin-bottom: 0.6rem;
+    }
+
+    .book-card h2 {
+      font-size: 1rem;
+    }
+
+    .book-card .subtitle {
+      font-size: 0.85rem;
     }
   }
 </style>

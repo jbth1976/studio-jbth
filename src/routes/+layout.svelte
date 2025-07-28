@@ -35,19 +35,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Studio JBTH",
-      "url": "https://studiojbth.fr",
-      "logo": "https://studiojbth.fr/images/logo-jbth.png",
-      "sameAs": [],
-      "founder": {
-        "@type": "Person",
-        "name": "Jean-Baptiste Tharrault"
+   {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Studio JBTH",
+  "url": "https://studiojbth.fr",
+  "logo": "https://studiojbth.fr/images/logo-jbth.png",
+  "description": "Studio créatif indépendant spécialisé dans le développement web, le design graphique, l’édition pour auteurs, la création de contenus digitaux et l’accompagnement créatif.",
+  "founder": {
+    "@type": "Person",
+    "name": "Jean-Baptiste Tharrault",
+    "url": "https://studiojbth.fr/a-propos"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "contact@studiojbth.fr",
+    "contactType": "customer support"
+  },
+  "inLanguage": ["fr", "en"],
+  "sameAs": [
+    "https://www.instagram.com/jbth1976/",
+    "https://www.linkedin.com/in/jean-baptiste-tharrault",
+    "https://studiojbth.fr"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services Studio JBTH",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Développement Web"
+        }
       },
-      "description": "Studio créatif spécialisé dans le développement web, le design graphique, et l'édition pour auteurs et entrepreneurs."
-    }
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Design Graphique"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Autoédition et Mise en page"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Création de contenu digital"
+        }
+      }
+    ]
+  }
+}
   </script>
 </svelte:head>
 

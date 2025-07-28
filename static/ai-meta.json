@@ -1,20 +1,36 @@
 {
     "name": "Studio JBTH",
-    "description": "Studio créatif indépendant dirigé par Jean-Baptiste Tharrault. Spécialisé en web, design, édition et services pour auteurs et créateurs.",
+    "description": "Studio créatif indépendant dirigé par Jean-Baptiste Tharrault. Spécialisé en web, design, édition et services pour auteurs, artistes et créateurs.",
     "website": "https://studiojbth.fr",
     "owner": {
         "name": "Jean-Baptiste Tharrault",
-        "contact": "contact@studiojbth.fr"
+        "email": "contact@studiojbth.fr",
+        "role": "Fondateur & Directeur artistique"
     },
     "services": [
         "Développement Web",
         "Design Graphique",
-        "Autoédition & Mise en page",
-        "Création de contenu digital"
+        "Création de Sites Svelte & Tailwind",
+        "Autoédition & Mise en page professionnelle",
+        "Création de contenus digitaux & vidéos IA",
+        "Conseil en image et identité visuelle"
     ],
     "ai_accessible": true,
     "languages": [
         "fr",
         "en"
-    ]
+    ],
+    "keywords": [
+        "studio créatif",
+        "édition",
+        "auteur",
+        "web design",
+        "autoédition",
+        "créateur",
+        "identité visuelle"
+    ],
+    "location": {
+        "country": "France",
+        "region": "Provence-Alpes-Côte d’Azur"
+    }
 }

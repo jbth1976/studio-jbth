@@ -49,7 +49,8 @@
     /* === Wrapper général de la page Contact === */
     .contact-wrapper {
       background: linear-gradient(to right, #ffffff 15%, #111111 15%, #111111 85%, #ffffff 85%);
-      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
       min-height: 100vh;
       padding: 6rem 1rem 4rem;
     }
@@ -156,6 +157,12 @@
       }
       .contact-hero p {
         font-size: 1.05rem;
+      }
+    }
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        background: #111111; /* Fond plein noir au lieu du gradient */
+        padding: 5rem 1rem 3rem;
       }
     }
   

@@ -83,6 +83,30 @@
     padding: 3rem 0;
   }
 
+  .collaboration-section {
+  color: #e0f7ff; /* texte lisible */
+  background: none;
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.collaboration-section h2 {
+  font-size: 1.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  margin-bottom: 1rem;
+}
+
+.collaboration-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c0fefe;
+  opacity: 0.95;
+  margin-bottom: 1.5rem;
+}
+
   .livres-container {
     max-width: 1200px;
     margin: 0 auto;

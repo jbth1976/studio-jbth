@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import { onMount } from 'svelte';
   import Header from '$lib/components/Header.svelte';
-  import Hero from '$lib/components/Hero.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import ChatBot from '$lib/components/ChatBot.svelte';
 
   let audio: HTMLAudioElement;
   let isPlaying = true;
@@ -11,12 +10,8 @@
   onMount(() => {
     audio.volume = 0;
     audio.play().then(() => {
-      setTimeout(() => {
-        audio.volume = 0.3;
-      }, 1000);
-    }).catch(() => {
-      isPlaying = false;
-    });
+      setTimeout(() => { audio.volume = 0.3; }, 1000);
+    }).catch(() => { isPlaying = false; });
   });
 
   function toggleAudio() {
@@ -32,7 +27,7 @@
 </script>
 
 <svelte:head>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script type="application/ld+json">
    {
@@ -41,7 +36,7 @@
   "name": "Studio JBTH",
   "url": "https://studiojbth.fr",
   "logo": "https://studiojbth.fr/images/logo-jbth.png",
-  "description": "Studio créatif indépendant spécialisé dans le développement web, le design graphique, l’édition pour auteurs, la création de contenus digitaux et l’accompagnement créatif.",
+  "description": "Studio créatif indépendant spécialisé dans le développement web, le design graphique, l'édition pour auteurs, la création de contenus digitaux et l'accompagnement créatif.",
   "founder": {
     "@type": "Person",
     "name": "Jean-Baptiste Tharrault",
@@ -57,125 +52,56 @@
     "https://www.instagram.com/jbth1976/",
     "https://www.linkedin.com/in/jean-baptiste-tharrault",
     "https://studiojbth.fr"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Services Studio JBTH",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Développement Web"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Design Graphique"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Autoédition et Mise en page"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Création de contenu digital"
-        }
-      }
-    ]
-  }
+  ]
 }
   </script>
 </svelte:head>
 
 <Header />
 
-{#if $page.url.pathname !== '/services'}
-  <Hero />
-  <div class="wave-transition">
-    <svg viewBox="0 0 500 100" preserveAspectRatio="none" class="wave-svg">
-      <path d="M0,0 C150,100 350,0 500,100 L500,0 L0,0 Z" fill="#0c0c0c" />
-    </svg>
-  </div>
-{/if}
-
-<button on:click={toggleAudio} class="audio-toggle" aria-label="Activer ou couper la musique de fond">
-  {#if isPlaying}🔊{:else}🔇{/if}
-</button>
-
-<audio bind:this={audio} src="/audios/JBTH FUTUR.mp3" loop preload="auto"></audio>
-
-<main class="page-wrapper { $page.url.pathname === '/services' ? 'no-hero-bg' : '' }">
+<main>
   <slot />
 </main>
 
 <Footer />
+<ChatBot />
+
+<button on:click={toggleAudio} class="audio-toggle" aria-label={isPlaying ? 'Couper la musique' : 'Activer la musique'}>
+  {#if isPlaying}
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+  {:else}
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+  {/if}
+</button>
+
+<audio bind:this={audio} src="/audios/JBTH FUTUR.mp3" loop preload="auto"></audio>
 
 <style>
-  .page-wrapper {
-    padding: 2rem;
-    max-width: 1280px;
-    margin: 0 auto;
-  }
+main {
+  min-height: 60vh;
+}
 
-  .no-hero-bg {
-    background-color: #ffffff !important;
-    position: relative;
-    z-index: 1;
-  }
-
-  .wave-transition {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: -1px;
-  }
-
-  .wave-svg {
-    width: 100%;
-    height: 60px;
-  }
-
-  .audio-toggle {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    background: rgba(0, 188, 212, 0.1);
-    border: 2px solid rgba(0, 188, 212, 0.5);
-    color: #00bcd4;
-    font-size: 1.8rem;
-    border-radius: 50%;
-    padding: 0.6rem 0.7rem;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
-    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
-    z-index: 9999;
-  }
-
-  .audio-toggle:hover {
-    background: rgba(0, 188, 212, 0.3);
-    box-shadow: 0 0 25px rgba(0, 188, 212, 0.6);
-    transform: scale(1.08);
-  }
-
-  @media screen and (max-width: 768px) {
-    .page-wrapper {
-      padding: 1.2rem;
-    }
-
-    .audio-toggle {
-      font-size: 1.4rem;
-      padding: 0.4rem 0.5rem;
-      bottom: 15px;
-      left: 15px;
-    }
-  }
+.audio-toggle {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 40px;
+  height: 40px;
+  background: rgba(244, 240, 234, 0.9);
+  border: .5px solid #e0d8cc;
+  color: #9A8E7E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  z-index: 9999;
+}
+.audio-toggle:hover {
+  background: #f4f0ea;
+  border-color: #C67A35;
+  color: #C67A35;
+}
 </style>

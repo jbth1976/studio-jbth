@@ -49,19 +49,19 @@
         let response = "Merci pour votre message. Un conseiller JBTH vous répondra bientôt.";
     
         if (text.includes('tarif') || text.includes('prix') || text.includes('devis')) {
-            response = "Nos tarifs varient selon le service. Vous pouvez demander un devis ici : <a href='/contact' target='_blank' style='color:#00ffff; text-decoration:underline;'>Contact</a>.";
+            response = "Nos tarifs varient selon le service. Vous pouvez demander un devis ici : <a href='/contact' target='_blank' style='color:#C67A35; text-decoration:underline;'>Contact</a>.";
         } else if (text.includes('contact') || text.includes('email') || text.includes('mail')) {
-            response = "Voici le lien direct pour nous contacter : <a href='/contact' target='_blank' style='color:#00ffff; text-decoration:underline;'>Contact</a>.";
+            response = "Voici le lien direct pour nous contacter : <a href='/contact' target='_blank' style='color:#C67A35; text-decoration:underline;'>Contact</a>.";
         } else if (text.includes('service') || text.includes('prestations')) {
-            response = "Découvrez nos services en création web, design et IA <a href='/services' target='_blank' style='color:#00ffff; text-decoration:underline;'>Services</a>.";
+            response = "Découvrez nos services en création web, design et IA <a href='/services' target='_blank' style='color:#C67A35; text-decoration:underline;'>Services</a>.";
         } else if (text.includes('livre') || text.includes('ebooks') || text.includes('roman')) {
-            response = "Nos livres et préventes sont disponibles <a href='/livres' target='_blank' style='color:#00ffff; text-decoration:underline;'>Livres</a>.";
+            response = "Nos livres et préventes sont disponibles <a href='/livres' target='_blank' style='color:#C67A35; text-decoration:underline;'>Livres</a>.";
         } else if (text.includes('réservation') || text.includes('rdv') || text.includes('rendez-vous')) {
-            response = "Prenez rendez-vous directement <a href='/contact' target='_blank' style='color:#00ffff; text-decoration:underline;'>ici</a>.";
+            response = "Prenez rendez-vous directement <a href='/contact' target='_blank' style='color:#C67A35; text-decoration:underline;'>ici</a>.";
         } else if (text.includes('réalisation') || text.includes('projets')) {
-            response = "Découvrez nos réalisations sur mesure <a href='/realisations-sur-mesure' target='_blank' style='color:#00ffff; text-decoration:underline;'>Réalisations</a>.";
+            response = "Découvrez nos réalisations sur mesure <a href='/realisations-sur-mesure' target='_blank' style='color:#C67A35; text-decoration:underline;'>Réalisations</a>.";
         } else if (text.includes('boutique')) {
-            response = "Accédez à notre boutique en ligne <a href='/boutique' target='_blank' style='color:#00ffff; text-decoration:underline;'>Boutique</a>.";
+            response = "Accédez à notre boutique en ligne <a href='/boutique' target='_blank' style='color:#C67A35; text-decoration:underline;'>Boutique</a>.";
         } else if (text.includes('merci')) {
             response = "Avec plaisir ✨. Je reste disponible si besoin.";
         } else {
@@ -105,108 +105,100 @@
     <style>
     .chat-button {
         position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #00ffff;
-        color: black;
-        border: none;
-        padding: 0.8rem 1.2rem;
-        border-radius: 50px;
-        font-weight: bold;
+        bottom: 24px; right: 24px;
+        width: 48px; height: 48px;
+        background: #171412;
+        color: #F4EFE7;
+        border: .5px solid #3d3830;
+        border-radius: 50%;
+        font-size: 18px;
         cursor: pointer;
-        box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
-        transition: transform 0.2s;
+        box-shadow: 0 4px 20px rgba(23,20,18,.25);
+        transition: background 0.2s ease, transform 0.2s ease;
         z-index: 1000;
+        display: flex; align-items: center; justify-content: center;
     }
-    .chat-button:hover { transform: scale(1.05); }
+    .chat-button:hover { background: #C67A35; transform: scale(1.05); }
+
     .chatbox {
         position: fixed;
-        bottom: 80px;
-        right: 20px;
-        width: 340px;
-        max-height: 500px;
-        background: rgba(0, 0, 0, 0.95);
+        bottom: 84px; right: 24px;
+        width: 340px; max-height: 480px;
+        background: #F4EFE7;
+        border: .5px solid #D8D0C4;
         border-radius: 12px;
-        box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        z-index: 1000;
-        font-family: 'Helvetica Neue', sans-serif;
+        box-shadow: 0 12px 40px rgba(23,20,18,.3);
+        display: flex; flex-direction: column;
+        overflow: hidden; z-index: 1000;
+        font-family: 'Manrope', system-ui, sans-serif;
     }
+
     .chat-header {
-        background: #00ffff;
-        padding: 0.8rem;
-        text-align: center;
-        font-weight: bold;
-        color: black;
-        font-size: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        background: #171412;
+        padding: 14px 16px;
+        font-size: 11px; font-weight: 700;
+        color: #F4EFE7;
+        letter-spacing: .1em; text-transform: uppercase;
+        display: flex; justify-content: space-between; align-items: center;
+        border-bottom: .5px solid #3d3830;
     }
+
     .reset-button {
-        background: none;
-        border: none;
-        color: black;
-        font-size: 1rem;
-        cursor: pointer;
+        background: none; border: none;
+        color: #9A8E7E; font-size: 14px;
+        cursor: pointer; transition: color 0.2s; padding: 0; line-height: 1;
     }
+    .reset-button:hover { color: #C67A35; }
+
     .chat-messages {
-        flex: 1;
-        padding: 1rem;
+        flex: 1; padding: 16px;
         overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
+        display: flex; flex-direction: column; gap: 10px;
         scroll-behavior: smooth;
     }
+
     .message {
-        padding: 0.5rem 0.8rem;
-        border-radius: 10px;
-        max-width: 80%;
-        animation: fadeIn 0.3s ease;
-        word-wrap: break-word;
+        padding: 10px 14px; border-radius: 8px;
+        max-width: 82%; font-size: 13px; line-height: 1.55;
+        animation: fadeIn 0.25s ease; word-wrap: break-word;
     }
     .message.bot {
-        background: rgba(0, 255, 255, 0.12);
-        align-self: flex-start;
-        color: #00ffff;
+        background: #EDE7DD; align-self: flex-start;
+        color: #171412; border-radius: 2px 8px 8px 8px;
     }
     .message.user {
-        background: rgba(255, 255, 255, 0.1);
-        align-self: flex-end;
-        color: white;
+        background: #C67A35; align-self: flex-end;
+        color: #F4EFE7; border-radius: 8px 2px 8px 8px;
     }
-    /* Removed unused CSS selectors for .message a and .message a:hover */
+
     .chat-input {
-        display: flex;
-        padding: 0.5rem;
-        border-top: 1px solid #00ffff44;
-        background: rgba(0, 0, 0, 0.8);
+        display: flex; gap: 8px; padding: 12px;
+        border-top: .5px solid #D8D0C4;
+        background: #EDE7DD;
     }
     .chat-input input {
-        flex: 1;
-        padding: 0.5rem;
-        border: none;
-        background: rgba(255, 255, 255, 0.05);
-        color: white;
-        border-radius: 8px;
-        font-size: 0.9rem;
+        flex: 1; padding: 10px 14px;
+        border: .5px solid #D8D0C4;
+        background: #F4EFE7; color: #171412;
+        border-radius: 6px; font-size: 12px;
+        font-family: 'Manrope', sans-serif;
+        outline: none; transition: border-color 0.2s;
     }
+    .chat-input input::placeholder { color: #9A8E7E; }
+    .chat-input input:focus { border-color: #C67A35; }
     .chat-input button {
-        background: #00ffff;
-        color: black;
-        border: none;
-        padding: 0.5rem 1rem;
-        margin-left: 0.5rem;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
-        font-size: 0.9rem;
+        background: #C67A35; color: #F4EFE7;
+        border: none; padding: 10px 16px;
+        border-radius: 6px; cursor: pointer;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700; font-size: 11px;
+        letter-spacing: .06em; text-transform: uppercase;
+        transition: background 0.2s; white-space: nowrap;
     }
+    .chat-input button:hover { background: #A06828; }
+
     @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(5px); }
+        from { opacity: 0; transform: translateY(4px); }
         to { opacity: 1; transform: translateY(0); }
     }
     </style>

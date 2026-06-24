@@ -3,92 +3,89 @@
 </script>
 
 <footer class="footer">
-  <div class="footer__content">
-    <p class="footer__copyright">
-      &copy; {year} Studio JBTH. Tous droits réservés.
-    </p>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">Studio JBTH</span>
+      <p class="footer-tagline">Design · Développement · Édition</p>
+    </div>
 
-    <nav class="footer__nav">
-      <ul class="footer__links">
-        <li><a href="/mentions-legales">Mentions Légales</a></li>
-        <li><a href="/confidentialite">Confidentialité</a></li>
-        <li><a href="/cookies">Cookies</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/ai-access" title="Page dédiée aux intelligences artificielles 🤖">Accès IA</a></li>
-      </ul>
+    <nav class="footer-nav">
+      <a href="/mentions-legales">Mentions légales</a>
+      <a href="/confidentialite">Confidentialité</a>
+      <a href="/cookies">Cookies</a>
+      <a href="/contact">Contact</a>
+      <a href="/ai-access">Accès IA</a>
     </nav>
+
+    <p class="footer-copy">&copy; {year} Studio JBTH</p>
   </div>
 </footer>
 
 <style>
-  :global(body) {
-    margin: 0;
-    padding: 0;
-  }
+.footer {
+  background: #2e2a26;
+  border-top: .5px solid #3d3830;
+  padding: 36px 28px;
+}
 
-  .footer {
-    background: rgba(0, 0, 0, 0.85);
-    color: white;
-    padding: 2rem 1.5rem;
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(0, 255, 255, 0.2);
-    width: 100%;
-    box-sizing: border-box;
-  }
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
 
-  .footer__content {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
+.footer-logo {
+  font-size: 14px;
+  font-weight: 800;
+  color: #f4f0ea;
+  letter-spacing: -.02em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.footer-tagline {
+  font-size: 10px;
+  color: #9A8E7E;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-nav a {
+  font-size: 11px;
+  color: #9A8E7E;
+  letter-spacing: .04em;
+  transition: color 0.2s ease;
+}
+.footer-nav a:hover {
+  color: #C67A35;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: #6b6158;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1.25rem;
   }
-
-  .footer__copyright {
-    font-size: 0.95rem;
-    margin: 0;
+  .footer-nav {
+    gap: 14px;
   }
-
-  .footer__nav {
-    width: 100%;
-  }
-
-  .footer__links {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  .footer__links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-
-  .footer__links a:hover {
-    color: cyan;
-  }
-
-  /* Mobile : marge latérale harmonieuse, centrage propre */
-  @media (max-width: 420px) {
-    .footer {
-      padding: 2rem 1rem;
-    }
-
-    .footer__links {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .footer__content {
-      gap: 1rem;
-    }
-  }
+}
 </style>

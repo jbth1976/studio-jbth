@@ -1,200 +1,211 @@
 <script lang="ts">
-  export const title = "Studio JBTH";
+  import { page } from '$app/stores';
   let menuOpen = false;
+  function close() { menuOpen = false; }
 </script>
 
 <header class="header">
-  <div class="header__logo">
-    <a href="/">
-      <img src="/logo.jpeg" alt="Logo Studio JBTH" width="80" height="80" loading="lazy" />
+  <div class="header-inner">
+
+    <a href="/" class="logo" on:click={close}>
+      <span class="logo-main">Studio JBTH</span>
+      <span class="logo-sub">Développement · Design · Édition</span>
     </a>
+
+    <nav class="nav" class:open={menuOpen}>
+      <a class="nav-link" href="/" class:active={$page.url.pathname === '/'} on:click={close}>Accueil</a>
+      <a class="nav-link" href="/about" class:active={$page.url.pathname === '/about'} on:click={close}>À propos</a>
+      <a class="nav-link" href="/services" class:active={$page.url.pathname === '/services'} on:click={close}>Services</a>
+      <a class="nav-link" href="/mes-projets" class:active={$page.url.pathname === '/mes-projets'} on:click={close}>Projets</a>
+      <a class="nav-link" href="/livres" class:active={$page.url.pathname === '/livres'} on:click={close}>Livres</a>
+    </nav>
+
+    <a href="/contact" class="cta" on:click={close}>Travailler ensemble</a>
+
+    <button
+      class="burger"
+      class:open={menuOpen}
+      on:click={() => menuOpen = !menuOpen}
+      aria-label="Menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
   </div>
-
-  <div class="header__center">
-    <strong>L’IA</strong> transforme vos idées en <span class="gradient-text">expériences</span>
-  </div>
-
-  <!-- Burger -->
-  <button class="burger" on:click={() => menuOpen = !menuOpen} aria-label="Menu" class:open={menuOpen}>
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <nav class="header__nav {menuOpen ? 'open' : ''}">
-    <ul class="nav__list">
-      <li><a class="nav__link" href="/" on:click={() => menuOpen = false}>Accueil</a></li>
-      <li><a class="nav__link" href="/about" on:click={() => menuOpen = false}>À Propos</a></li>
-      <li><a class="nav__link" href="/services" on:click={() => menuOpen = false}>Services</a></li>
-      <li><a class="nav__link" href="/mes-projets" on:click={() => menuOpen = false}>Réalisations sur mesure</a></li>
-      <li><a class="nav__link" href="/livres" on:click={() => menuOpen = false}>Livres</a></li>
-      <li><a class="nav__link" href="/contact" on:click={() => menuOpen = false}>Contact</a></li>
-    </ul>
-  </nav>
 </header>
 
 <style>
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.5rem;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 999;
-  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  background: rgba(244, 239, 231, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: .5px solid #E0D5C7;
 }
 
-.header__logo img {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  background: #0d0d0d;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
-  filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.header__logo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-}
-
-.header__center {
-  flex: 1;
-  text-align: center;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  color: #00ffff;
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
-}
-.header__center strong {
-  display: inline-block;
-  animation: vibrateVisible 2s infinite;
-}
-.gradient-text {
-  background: linear-gradient(90deg, #00ffff, #0fffcf, #00ffff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-size: 200% auto;
-  animation: shimmer 4s linear infinite;
-}
-
-.header__nav {
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-}
-.nav__list {
+.header-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 36px;
+  height: 88px;
   display: flex;
-  gap: 1.2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.nav__link {
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
-}
-.nav__link::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #00ffff;
-  transition: width 0.3s ease;
-}
-.nav__link:hover {
-  color: #00ffff;
-}
-.nav__link:hover::after {
-  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
 }
 
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logo-main {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1;
+  display: block;
+  padding-bottom: 10px;
+
+  /* Reflet champagne/cuivre */
+  background: linear-gradient(
+    108deg,
+    #171412 0%,
+    #171412 28%,
+    #b8895a 40%,
+    #f0dfc0 48%,
+    #e8c88a 52%,
+    #c67a35 58%,
+    #171412 70%,
+    #171412 100%
+  );
+  background-size: 280% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Contour très léger */
+  -webkit-text-stroke: .4px rgba(198, 122, 53, 0.2);
+
+  /* Ombre douce */
+  filter: drop-shadow(0 1px 3px rgba(23, 20, 18, 0.12));
+
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  60%  { background-position: -20% center; }
+  100% { background-position: 200% center; }
+}
+
+.logo-sub {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  color: #9A8E7E;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 0;
+}
+
+/* ===== NAV ===== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #9A8E7E;
+  letter-spacing: .04em;
+  transition: color 0.2s ease;
+  position: relative;
+}
+.nav-link:hover,
+.nav-link.active { color: #171412; }
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0; right: 0;
+  height: 1.5px;
+  background: #C67A35;
+  border-radius: 1px;
+}
+
+/* ===== CTA ===== */
+.cta {
+  flex-shrink: 0;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #F4EFE7;
+  background: #171412;
+  padding: 10px 20px;
+  border-radius: 3px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+.cta:hover { background: #C67A35; }
+
+/* ===== BURGER ===== */
 .burger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 20px;
+  width: 24px;
+  height: 17px;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 1001;
+  padding: 0;
 }
 .burger span {
   display: block;
-  height: 3px;
+  height: 1.5px;
   width: 100%;
-  background: #00ffff;
-  border-radius: 2px;
+  background: #171412;
+  border-radius: 1px;
   transition: all 0.3s ease;
 }
-.burger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.burger.open span:nth-child(2) {
-  opacity: 0;
-}
-.burger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
+.burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-@keyframes shimmer {
-  0% { background-position: -100% }
-  100% { background-position: 200% }
-}
-@keyframes vibrateVisible {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  20% { transform: translate(-0.5px, 0.5px) rotate(-0.1deg); }
-  40% { transform: translate(0.5px, -0.5px) rotate(0.1deg); }
-  60% { transform: translate(-0.3px, 0.3px) rotate(-0.05deg); }
-  80% { transform: translate(0.3px, -0.3px) rotate(0.05deg); }
-}
-
-@media screen and (max-width: 768px) {
-  .header {
+@media (max-width: 768px) {
+  .header-inner { padding: 0 20px; height: 68px; }
+  .logo-main { font-size: 32px; }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 68px; left: 0; right: 0;
+    background: rgba(244, 239, 231, 0.98);
+    backdrop-filter: blur(16px);
     flex-direction: column;
-    align-items: center;
-    padding: 0.8rem 1rem;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 18px;
+    border-bottom: .5px solid #E0D5C7;
   }
-  .header__logo img {
-    width: 55px;
-    height: 55px;
-  }
-  .header__center {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    text-align: center;
-    width: 100%;
-  }
-  .burger {
-    display: flex;
-    align-self: flex-end;
-    margin: 0.5rem 0;
-  }
-  .header__nav {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
-  }
-  .header__nav.open {
-    max-height: 500px;
-    opacity: 1;
-  }
-  .nav__list {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 0.5rem 0;
-  }
+  .nav.open { display: flex; }
+  .nav-link { font-size: 14px; }
+  .cta { display: none; }
+  .burger { display: flex; }
 }
 </style>

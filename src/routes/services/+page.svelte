@@ -215,6 +215,10 @@
 .status-msg.success { color: #c8c0ff; }
 .status-msg.err { color: #f09595; }
 
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 768px) {
   .page-hero { padding: 48px 16px 36px; }
   .content { padding: 0 16px 48px; }
@@ -224,5 +228,9 @@
   .devis-section h2 { font-size: 28px; }
   .service-block { padding: 20px 16px; }
   .item-label { font-size: 13px; }
+  .item { grid-template-columns: 1fr auto; gap: 8px; }
+  .item-price { font-size: 15px; }
+  .form button { width: 100%; text-align: center; align-self: auto; }
+  .page-hero-inner h1 { font-size: 32px; }
 }
 </style>

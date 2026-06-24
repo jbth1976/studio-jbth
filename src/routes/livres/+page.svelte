@@ -277,6 +277,8 @@
   .collab-block { padding: 36px 24px; }
 }
 @media (max-width: 480px) {
-  .books-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .books-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .page-hero-inner h1 { font-size: 32px; }
+  .collab-block { padding: 24px 16px; border-radius: 10px; }
 }
 </style>

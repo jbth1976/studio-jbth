@@ -339,10 +339,17 @@
 @media (max-width: 600px) {
   .hero { padding: 48px 16px 36px; }
   .content { padding: 0 16px 48px; }
+  .bio { padding: 32px 0; }
+  .studio { padding: 32px 0; }
+  .values { padding: 32px 0; }
   .form-row { grid-template-columns: 1fr; }
   .form-section { padding: 28px 16px; border-radius: 10px; }
   .values-grid { grid-template-columns: 1fr; gap: 8px; }
-  .bio-portrait { max-width: 200px; }
-  .section-title { font-size: 32px; }
+  .form-title { font-size: 32px; }
+  .bio-title { font-size: clamp(28px, 8vw, 36px); }
+  .studio-title { font-size: 28px; }
+  .form button { width: 100%; text-align: center; align-self: auto; }
+  .quote { padding: 24px 20px; }
+  .hero-inner h1 { font-size: clamp(36px, 10vw, 52px); }
 }
 </style>

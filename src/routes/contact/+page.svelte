@@ -217,11 +217,12 @@ a.info-value:hover { opacity: .75; }
 @media (max-width: 600px) {
   .page-hero { padding: 48px 16px 36px; }
   .content { padding: 0 16px 48px; }
-  .form-col { padding: 24px 16px; }
+  .form-col { padding: 20px 16px; }
   .info-card { padding: 20px 16px; }
   .socials-card { padding: 16px; }
   .form input, .form textarea { padding: 12px 14px; }
-  .form button { width: 100%; text-align: center; padding: 14px; }
-  .page-hero-inner h1 { font-size: 36px; }
+  .form button { width: 100%; text-align: center; padding: 14px; align-self: auto; }
+  .page-hero-inner h1 { font-size: 32px; }
+  .info-card h2 { font-size: 18px; }
 }
 </style>

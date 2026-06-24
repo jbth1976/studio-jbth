@@ -1,9 +1,7 @@
 {
-  "build": {
-    "env": {
-      "NODE_VERSION": "20"
-    }
-  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [

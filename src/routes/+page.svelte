@@ -185,12 +185,14 @@
 </section>
 
 <!-- CONTACT BAR -->
+<div class="contact-bar-wrap">
 <div class="contact-bar">
   <div>
     <h2 class="contact-h">Un projet en tête ?</h2>
     <p class="contact-sub">Je suis disponible pour de nouvelles collaborations.</p>
   </div>
   <a href="/contact" class="contact-btn">Me contacter</a>
+</div>
 </div>
 
 
@@ -604,13 +606,10 @@
 .temo-role { font-size: 10px; color: #6b6158; letter-spacing: .08em; text-transform: uppercase; }
 
 /* ===== CONTACT BAR ===== */
-.contact-bar {
+.contact-bar-wrap {
   max-width: 1280px;
   margin: 0 auto 48px;
   padding: 0 28px;
-}
-.contact-bar > div:first-child + * {
-  flex-shrink: 0;
 }
 
 .contact-bar {
@@ -717,15 +716,20 @@
   }
   .temoignages { padding: 48px 16px; }
   .temo-card { padding: 28px 20px; }
+  .contact-bar-wrap {
+    padding: 0 16px;
+    margin-bottom: 40px;
+  }
   .contact-bar {
-    margin: 0 16px 40px;
     padding: 28px 24px;
     flex-direction: column;
     align-items: flex-start;
+    gap: 20px;
   }
   .contact-btn {
     width: 100%;
     text-align: center;
+    padding: 14px 20px;
   }
 }
 </style>

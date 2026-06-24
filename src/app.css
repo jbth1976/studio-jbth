@@ -41,6 +41,60 @@ p, h1, h2, h3, h4, h5 {
   overflow-wrap: break-word;
 }
 
+/* ===== RESPONSIVE MOBILE GLOBAL ===== */
+@media (max-width: 768px) {
+
+  /* Tous les inputs, textarea, boutons de formulaire */
+  input,
+  textarea,
+  select {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  /* Padding interne max 16px sur toutes les cartes */
+  [class*="card"],
+  [class*="block"],
+  [class*="section"] {
+    min-width: 0 !important;
+    overflow: hidden;
+  }
+
+  /* Form rows en 1 colonne */
+  [class*="form-row"] {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  /* Boutons de formulaire */
+  form button[type="submit"],
+  form button:not([class*="chat"]) {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Chatbot ne recouvre pas le contenu */
+  .chat-button {
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+
+  .chatbox {
+    bottom: 70px !important;
+    right: 10px !important;
+    width: calc(100vw - 20px) !important;
+    max-height: 420px !important;
+  }
+}
+
 h1, h2, h3, h4, h5 {
   color: var(--ink);
   margin: 0;

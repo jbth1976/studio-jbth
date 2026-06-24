@@ -608,7 +608,7 @@
 /* ===== CONTACT BAR ===== */
 .contact-bar-wrap {
   max-width: 1280px;
-  margin: 0 auto 48px;
+  margin: 48px auto 48px;
   padding: 0 28px;
 }
 
@@ -676,9 +676,19 @@
   .temo-grid { grid-template-columns: 1fr; gap: 8px; }
   .temoignages { padding: 48px 16px; }
   .temo-card { padding: 28px 20px; }
-  .contact-bar-wrap { padding: 0 16px; margin-bottom: 40px; }
-  .contact-bar { padding: 28px 20px; flex-direction: column; align-items: flex-start; gap: 20px; }
-  .contact-btn { width: 100%; text-align: center; padding: 14px 20px; }
+  .contact-bar-wrap { padding: 0 16px; margin: 32px auto 40px; }
+  .contact-bar { padding: 24px 20px; flex-direction: column; align-items: stretch; gap: 16px; }
+  .contact-btn {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 14px;
+    display: block;
+    flex-shrink: 1;
+    white-space: normal;
+    box-sizing: border-box;
+  }
   .contact-h { font-size: 20px; }
+  .contact-sub { font-size: 12px; }
 }
 </style>

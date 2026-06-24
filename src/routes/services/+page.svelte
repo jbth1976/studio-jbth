@@ -216,10 +216,13 @@
 .status-msg.err { color: #f09595; }
 
 @media (max-width: 768px) {
-  .page-hero { padding: 60px 16px 48px; }
-  .content { padding: 0 16px 60px; }
+  .page-hero { padding: 48px 16px 36px; }
+  .content { padding: 0 16px 48px; }
   .services-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .devis-section { padding: 32px 20px; }
+  .devis-section { padding: 28px 16px; border-radius: 10px; }
+  .devis-section h2 { font-size: 28px; }
+  .service-block { padding: 20px 16px; }
+  .item-label { font-size: 13px; }
 }
 </style>

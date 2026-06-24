@@ -333,14 +333,16 @@
 @media (max-width: 900px) {
   .bio { grid-template-columns: 1fr; gap: 32px; }
   .studio { grid-template-columns: 1fr; gap: 32px; }
-  .form-section { grid-template-columns: 1fr; gap: 32px; padding: 40px 28px; }
+  .form-section { grid-template-columns: 1fr; gap: 24px; padding: 40px 24px; }
   .values-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
-  .hero { padding: 60px 16px 48px; }
-  .content { padding: 0 16px 60px; }
+  .hero { padding: 48px 16px 36px; }
+  .content { padding: 0 16px 48px; }
   .form-row { grid-template-columns: 1fr; }
-  .form-section { padding: 32px 20px; }
-  .values-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .form-section { padding: 28px 16px; border-radius: 10px; }
+  .values-grid { grid-template-columns: 1fr; gap: 8px; }
+  .bio-portrait { max-width: 200px; }
+  .section-title { font-size: 32px; }
 }
 </style>

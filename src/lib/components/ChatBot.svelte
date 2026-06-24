@@ -103,6 +103,11 @@
     {/if}
     
     <style>
+    @media (max-width: 600px) {
+      .chat-button { bottom: 16px; right: 16px; width: 42px; height: 42px; }
+      .chatbox { bottom: 70px; right: 10px; width: calc(100vw - 20px); max-height: 420px; }
+    }
+
     .chat-button {
         position: fixed;
         bottom: 24px; right: 24px;

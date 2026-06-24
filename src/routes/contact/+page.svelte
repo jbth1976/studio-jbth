@@ -210,11 +210,18 @@ a.info-value:hover { opacity: .75; }
 .error-msg { font-size: 14px; color: #c0392b; padding: 20px 0; }
 
 @media (max-width: 900px) {
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 12px; }
+  .form-col { padding: 28px 24px; }
+  .info-card { padding: 24px; }
 }
 @media (max-width: 600px) {
-  .page-hero { padding: 60px 16px 48px; }
-  .content { padding: 0 16px 60px; }
-  .form-col { padding: 28px 20px; }
+  .page-hero { padding: 48px 16px 36px; }
+  .content { padding: 0 16px 48px; }
+  .form-col { padding: 24px 16px; }
+  .info-card { padding: 20px 16px; }
+  .socials-card { padding: 16px; }
+  .form input, .form textarea { padding: 12px 14px; }
+  .form button { width: 100%; text-align: center; padding: 14px; }
+  .page-hero-inner h1 { font-size: 36px; }
 }
 </style>

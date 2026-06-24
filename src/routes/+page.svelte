@@ -688,14 +688,21 @@
   .hero {
     padding: 48px 16px 40px;
   }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
   .hero-right {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
   .hero-vid-main {
-    grid-column: span 2;
+    grid-column: span 1;
+    aspect-ratio: 16 / 9;
   }
-  .hero-vid-sm:last-child {
-    display: none;
+  .hero-vid-sm {
+    grid-column: span 1;
+    aspect-ratio: 16 / 9;
   }
   .expertises {
     grid-template-columns: 1fr;
@@ -704,6 +711,12 @@
   .expertise-section {
     padding: 40px 16px;
   }
+  .temo-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .temoignages { padding: 48px 16px; }
+  .temo-card { padding: 28px 20px; }
   .contact-bar {
     margin: 0 16px 40px;
     padding: 28px 24px;

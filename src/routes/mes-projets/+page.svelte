@@ -48,10 +48,10 @@
   });
 
   const projets = [
-    { img: '/images/inter-IA.png', alt: 'Identité visuelle Studio JBTH', title: 'Identité visuelle', desc: 'Branding complet Studio JBTH — logo, charte graphique, déclinaisons print et digital.' },
-    { img: '/images/Maquette.png', alt: 'Interface IA sur-mesure', title: 'Interface IA sur-mesure', desc: 'Dashboard analytique alimenté par IA, avec visualisations temps réel et suggestions automatisées.' },
-    { img: '/images/Palette.png', alt: 'Portfolio créatif 3D', title: 'Portfolio créatif 3D', desc: 'Expérience 3D immersive mêlant design produit, animation et narration visuelle.' },
-    { img: '/images/Landing.png', alt: 'Landing page AI/Design', title: 'Landing page AI', desc: 'Site vitrine haute performance — score 98, design éditorial et conversion UX optimisée.' },
+    { img: '/images/inter-IA.webp', alt: 'Identité visuelle Studio JBTH', title: 'Identité visuelle', desc: 'Branding complet Studio JBTH — logo, charte graphique, déclinaisons print et digital.' },
+    { img: '/images/Maquette.webp', alt: 'Interface IA sur-mesure', title: 'Interface IA sur-mesure', desc: 'Dashboard analytique alimenté par IA, avec visualisations temps réel et suggestions automatisées.' },
+    { img: '/images/Palette.webp', alt: 'Portfolio créatif 3D', title: 'Portfolio créatif 3D', desc: 'Expérience 3D immersive mêlant design produit, animation et narration visuelle.' },
+    { img: '/images/Landing.webp', alt: 'Landing page AI/Design', title: 'Landing page AI', desc: 'Site vitrine haute performance — score 98, design éditorial et conversion UX optimisée.' },
   ];
 
   const carousel_images = [

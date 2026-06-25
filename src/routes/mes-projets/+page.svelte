@@ -55,22 +55,22 @@
   ];
 
   const carousel_images = [
-    { src: '/Carroussel/Majestic.jpg', alt: 'Salle majestueuse' },
-    { src: '/Carroussel/salon-design.jpg', alt: 'Salon design moderne' },
-    { src: '/Carroussel/art.jpg', alt: 'Œuvre artistique contemporaine' },
-    { src: '/Carroussel/code.jpeg', alt: 'Écran de code' },
-    { src: '/Carroussel/dessert.jpg', alt: 'Dessert raffiné' },
-    { src: '/Carroussel/evolution.jpg', alt: "Concept d'évolution" },
-    { src: '/Carroussel/logojb.jpg', alt: 'Logo JBTH' },
-    { src: '/Carroussel/visage.jpg', alt: 'Visage artistique' },
-    { src: '/Carroussel/lettre.jpg', alt: 'Lettre manuscrite' },
-    { src: '/Carroussel/visge2.jpeg', alt: 'Portrait artistique' },
-    { src: '/Carroussel/logoresto.jpg', alt: 'Logo de restaurant' },
-    { src: '/Carroussel/tasse.jpg', alt: 'Tasse de café' },
-    { src: '/Carroussel/fleur.jpg', alt: 'Fleur en gros plan' },
-    { src: '/Carroussel/moodboard.jpg', alt: 'Moodboard créatif' },
-    { src: '/Carroussel/couverture1.png', alt: 'Couverture de projet 1' },
-    { src: '/Carroussel/couverture2.jpg', alt: 'Couverture de projet 2' },
+    { src: '/Carroussel/Majestic.webp', alt: 'Salle majestueuse' },
+    { src: '/Carroussel/salon-design.webp', alt: 'Salon design moderne' },
+    { src: '/Carroussel/art.webp', alt: 'Œuvre artistique contemporaine' },
+    { src: '/Carroussel/code.webp', alt: 'Écran de code' },
+    { src: '/Carroussel/dessert.webp', alt: 'Dessert raffiné' },
+    { src: '/Carroussel/evolution.webp', alt: "Concept d'évolution" },
+    { src: '/Carroussel/logojb.webp', alt: 'Logo JBTH' },
+    { src: '/Carroussel/visage.webp', alt: 'Visage artistique' },
+    { src: '/Carroussel/lettre.webp', alt: 'Lettre manuscrite' },
+    { src: '/Carroussel/visge2.webp', alt: 'Portrait artistique' },
+    { src: '/Carroussel/logoresto.webp', alt: 'Logo de restaurant' },
+    { src: '/Carroussel/tasse.webp', alt: 'Tasse de café' },
+    { src: '/Carroussel/fleur.webp', alt: 'Fleur en gros plan' },
+    { src: '/Carroussel/moodboard.webp', alt: 'Moodboard créatif' },
+    { src: '/Carroussel/couverture1.webp', alt: 'Couverture de projet 1' },
+    { src: '/Carroussel/couverture2.webp', alt: 'Couverture de projet 2' },
   ];
 </script>
 

@@ -91,7 +91,7 @@
   {/if}
 </button>
 
-<audio bind:this={audio} src="/audios/JBTH FUTUR.mp3" loop preload="auto"></audio>
+<audio bind:this={audio} src="/audios/JBTH FUTUR.mp3" loop preload="none"></audio>
 
 <style>
 main {

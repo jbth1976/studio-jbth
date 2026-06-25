@@ -294,37 +294,92 @@
 
 /* FORMULAIRE */
 .form-section {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: center;
-  background: #2e2a26; border-radius: 14px;
-  padding: 64px 56px; margin-top: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  background: #2e2a26;
+  border-radius: 14px;
+  padding: 48px 40px;
+  margin-top: 16px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.form-left,
+.form-right {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 .form-title {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 42px; font-weight: 700; color: #F4EFE7;
-  line-height: 1.05; letter-spacing: .01em; margin-bottom: 20px;
+  font-size: 42px;
+  font-weight: 700;
+  color: #F4EFE7;
+  line-height: 1.05;
+  letter-spacing: .01em;
+  margin-bottom: 20px;
 }
 .form-title em { font-style: italic; font-weight: 400; color: #E8C88A; }
-.form-sub { font-family: 'Manrope', sans-serif; font-size: 13px; color: #B8A898; line-height: 1.85; max-width: 320px; }
-.form { display: flex; flex-direction: column; gap: 12px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.form input, .form textarea {
-  background: #3a3530; border: .5px solid #4a4540;
-  color: #F4EFE7; border-radius: 6px;
-  padding: 14px 16px; font-size: 13px;
+.form-sub {
   font-family: 'Manrope', sans-serif;
-  transition: border-color 0.2s; width: 100%;
+  font-size: 13px;
+  color: #B8A898;
+  line-height: 1.85;
+  max-width: 320px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+.form input, .form textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: #3a3530;
+  border: .5px solid #4a4540;
+  color: #F4EFE7;
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-size: 13px;
+  font-family: 'Manrope', sans-serif;
+  transition: border-color 0.2s;
 }
 .form input::placeholder, .form textarea::placeholder { color: #9A8E7E; }
 .form input:focus, .form textarea:focus { outline: none; border-color: #C67A35; }
 .form textarea { resize: vertical; min-height: 140px; }
 .form button {
-  align-self: flex-start; font-family: 'Manrope', sans-serif;
-  font-size: 11px; font-weight: 700;
-  color: #171412; background: #F4EFE7;
-  padding: 13px 28px; border-radius: 3px; border: none;
-  letter-spacing: .07em; text-transform: uppercase;
-  cursor: pointer; transition: background 0.2s;
+  align-self: flex-start;
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #171412;
+  background: #F4EFE7;
+  padding: 13px 28px;
+  border-radius: 3px;
+  border: none;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 .form button:hover { background: #E8C88A; }
 .form button:disabled { opacity: .5; cursor: not-allowed; }
@@ -333,45 +388,31 @@
 @media (max-width: 900px) {
   .bio { grid-template-columns: 1fr; gap: 32px; }
   .studio { grid-template-columns: 1fr; gap: 32px; }
-  .form-section { grid-template-columns: 1fr; gap: 24px; padding: 40px 24px; }
   .values-grid { grid-template-columns: 1fr 1fr; }
+  .form-section { grid-template-columns: 1fr; gap: 24px; padding: 40px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .form-section { padding: 24px 16px; border-radius: 10px; gap: 20px; }
+  .form-title { font-size: 28px; }
+  .form-sub { max-width: 100%; font-size: 12px; }
+  .form input, .form textarea { padding: 13px 14px; font-size: 12px; }
+  .form button { width: 100%; align-self: stretch; }
 }
 @media (max-width: 600px) {
   .hero { padding: 40px 16px 28px; }
   .content { padding: 0 16px 40px; }
-  .bio { padding: 28px 0; gap: 20px; }
-  .studio { padding: 28px 0; gap: 20px; }
+  .bio { padding: 28px 0; }
+  .studio { padding: 28px 0; }
   .values { padding: 28px 0; }
-
-  /* Portrait moins grand sur mobile */
-  .portrait { aspect-ratio: 4/3; max-height: 260px; object-position: center top; }
-  .portrait-frame { max-width: 100%; }
-  .portrait-caption { flex-direction: row; justify-content: space-between; align-items: center; }
-
-  /* Bio texte */
-  .bio-title { font-size: 28px; margin-bottom: 16px; }
-  .bio-body p { font-size: 13px; }
-
-  /* Studio */
+  .portrait { aspect-ratio: 1/1; max-height: 280px; object-fit: cover; object-position: center 30%; }
+  .portrait-frame { border-radius: 8px; }
+  .bio-title { font-size: 28px; }
   .studio-title { font-size: 24px; }
-  .studio-desc { font-size: 13px; }
   .quote { padding: 20px 16px; }
-  .quote-text { font-size: 17px; }
-
-  /* Valeurs */
   .values-grid { grid-template-columns: 1fr; gap: 8px; }
   .value-card { padding: 20px 16px; }
-  .value-title { font-size: 22px; }
-  .value-desc { font-size: 12px; }
-
-  /* Formulaire */
-  .form-section { padding: 24px 16px; border-radius: 10px; margin-top: 8px; }
-  .form-title { font-size: 28px; margin-bottom: 12px; }
-  .form-sub { font-size: 12px; }
-  .form-row { grid-template-columns: 1fr; }
-  .form input, .form textarea { padding: 12px 14px; font-size: 13px; }
-  .form button { width: 100%; text-align: center; align-self: auto; padding: 13px; }
-
   .hero-inner h1 { font-size: clamp(32px, 10vw, 48px); }
 }
 </style>

@@ -131,8 +131,10 @@
 .content { max-width: 1280px; margin: 0 auto; padding: 0 28px 80px; }
 
 .contact-grid {
-  display: grid; grid-template-columns: 340px 1fr;
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
   gap: 16px; align-items: start;
+  width: 100%; box-sizing: border-box;
 }
 
 /* INFO */
@@ -178,16 +180,19 @@ a.info-value:hover { opacity: .75; }
   border: .5px solid #C8BFB3;
   border-radius: 10px; padding: 40px;
   box-shadow: 0 2px 16px rgba(23,20,18,.06);
+  min-width: 0; box-sizing: border-box;
 }
-.form { display: flex; flex-direction: column; gap: 20px; }
+.info-col { min-width: 0; box-sizing: border-box; }
+.form { display: flex; flex-direction: column; gap: 20px; width: 100%; min-width: 0; box-sizing: border-box; }
 .form-group { display: flex; flex-direction: column; gap: 6px; }
 .form-group label { font-size: 9px; color: #9A8E7E; letter-spacing: .12em; text-transform: uppercase; }
 .form input, .form textarea {
+  display: block; width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box;
   background: #fff;
   border: 1px solid #C8BFB3;
   color: #171412; border-radius: 6px;
   padding: 14px 16px; font-size: 13px;
-  font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s; width: 100%;
+  font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s;
   box-shadow: inset 0 1px 3px rgba(23,20,18,.04);
 }
 .form input::placeholder, .form textarea::placeholder { color: #B8A898; }

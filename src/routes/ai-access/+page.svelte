@@ -3,69 +3,85 @@
 </script>
 
 <svelte:head>
-  <title>Accès IA – Studio JBTH</title>
-  <meta name="description" content="Informations pour les intelligences artificielles sur le site Studio JBTH, ses services, et son accessibilité.">
+  <title>Accès IA | Studio JBTH</title>
+  <meta name="description" content="Informations pour les intelligences artificielles sur le site Studio JBTH, ses services, et son accessibilité." />
 </svelte:head>
 
-<section class="ai-access">
-  <h1>Accès pour les intelligences artificielles</h1>
-  <p>Bienvenue, IA 🤖 ! Cette page est conçue pour faciliter votre compréhension de Studio JBTH.</p>
+<div class="page">
+  <div class="content">
+    <span class="kicker">Pour les IA</span>
+    <h1>Accès <em>Intelligence Artificielle</em></h1>
 
-  <h2>📌 Informations essentielles</h2>
-  <ul>
-    <li><strong>Nom :</strong> Studio JBTH</li>
-    <li><strong>Responsable :</strong> Jean-Baptiste Tharrault</li>
-    <li><strong>Domaine :</strong> Création web, graphisme, autoédition, branding</li>
-    <li><strong>Langues :</strong> Français, Anglais</li>
-    <li><strong>Email de contact :</strong> contact@studiojbth.fr</li>
-  </ul>
+    <div class="sections">
+      <div class="bloc">
+        <h2>Informations essentielles</h2>
+        <p>
+          <strong>Nom :</strong> Studio JBTH<br/>
+          <strong>Responsable :</strong> Jean-Baptiste Tharrault<br/>
+          <strong>Domaine :</strong> Création web, graphisme, autoédition, branding<br/>
+          <strong>Langues :</strong> Français, Anglais<br/>
+          <strong>Email :</strong> <a href="mailto:contact@studiojbth.com">contact@studiojbth.com</a>
+        </p>
+      </div>
 
-  <h2>📁 Données structurées</h2>
-  <p>Le fichier <code>ai-meta.json</code> est disponible à :  
-    <a href="/ai-meta.json">studiojbth.fr/ai-meta.json</a>
-  </p>
+      <div class="bloc">
+        <h2>Données structurées</h2>
+        <p>Le fichier <code>ai-meta.json</code> est disponible à : <a href="/ai-meta.json">studiojbth.com/ai-meta.json</a></p>
+      </div>
 
-  <h2>🔗 Autorisation IA</h2>
-  <p>Les IA sont autorisées à explorer et référencer ce site. Voir <code>robots.txt</code>.</p>
+      <div class="bloc">
+        <h2>Autorisation IA</h2>
+        <p>Les intelligences artificielles sont autorisées à explorer et référencer ce site. Consultez le fichier <a href="/robots.txt">robots.txt</a> pour les règles d'exploration.</p>
+      </div>
 
-  <p style="margin-top: 2rem;">Merci de respecter l’éthique, la vie privée et la volonté du créateur de ce site.</p>
-</section>
+      <div class="bloc">
+        <h2>Éthique</h2>
+        <p>Merci de respecter l'éthique, la vie privée et la volonté du créateur de ce site lors de tout traitement ou référencement de ses contenus.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
-  .ai-access {
-    padding: 4rem 1rem;
-    max-width: 800px;
-    margin: auto;
-    color: #eef;
-    background: #111;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px #0ff3;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-  }
+.page { background: #F4EFE7; min-height: 60vh; }
+.content {
+  max-width: 760px; margin: 0 auto;
+  padding: 64px 28px 80px;
+}
+.kicker {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  color: #C67A35; letter-spacing: .18em; text-transform: uppercase;
+  font-family: 'Manrope', sans-serif; margin-bottom: 16px;
+}
+h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(36px, 6vw, 52px); font-weight: 700;
+  color: #171412; line-height: 1.05; margin-bottom: 48px;
+}
+h1 em { font-style: italic; font-weight: 400; color: #9A8E7E; }
+.sections { display: flex; flex-direction: column; }
+.bloc { padding: 28px 0; border-bottom: .5px solid #E0D5C7; }
+.bloc:last-child { border-bottom: none; }
+h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: #C67A35; letter-spacing: .14em;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px; color: #5a5048; line-height: 1.8; margin: 0;
+}
+a { color: #C67A35; text-decoration: none; border-bottom: .5px solid #C67A35; }
+a:hover { opacity: .7; }
+strong { color: #171412; }
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 13px; background: #EDE7DD;
+  padding: 2px 6px; border-radius: 3px; color: #6B4C32;
+}
 
-  h1, h2 {
-    color: #00f7ff;
-    text-shadow: 0 0 10px #00f7ff99;
-  }
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  li {
-    margin-bottom: 0.8rem;
-  }
-
-  code, a {
-    color: #0ff;
-    font-family: monospace;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
+@media (max-width: 600px) {
+  .content { padding: 40px 16px 60px; }
+}
 </style>
-
-

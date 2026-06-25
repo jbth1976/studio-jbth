@@ -12,6 +12,23 @@
     audio.play().then(() => {
       setTimeout(() => { audio.volume = 0.3; }, 1000);
     }).catch(() => { isPlaying = false; });
+
+    // Animations au scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+          observer.unobserve(el.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(
+      'section, .book-card, .service-block, .value-card, .info-card, .collab-block, .devis-section, .form-section, .contact-grid, .collab-quote, .section-head'
+    ).forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
   });
 
   function toggleAudio() {

@@ -155,14 +155,14 @@
   font-size: 11px;
   font-weight: 700;
   color: #F4EFE7;
-  background: #171412;
+  background: #C67A35;
   padding: 10px 20px;
   border-radius: 3px;
   letter-spacing: .06em;
   text-transform: uppercase;
   transition: background 0.2s ease;
 }
-.cta:hover { background: #C67A35; }
+.cta:hover { background: #A85E20; }
 
 /* ===== BURGER ===== */
 .burger {

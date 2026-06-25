@@ -187,17 +187,28 @@
 /* DEVIS */
 .devis-section {
   background: #1a1612; border-radius: 14px; padding: 48px;
+  width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden;
 }
 .devis-header { margin-bottom: 32px; }
 .devis-header h2 { font-size: 24px; font-weight: 800; color: #f4f0ea; letter-spacing: -.03em; margin-bottom: 6px; }
 .devis-header p { font-size: 13px; color: #6b6158; }
-.form { display: flex; flex-direction: column; gap: 12px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form {
+  display: flex; flex-direction: column; gap: 12px;
+  width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  width: 100%; max-width: 100%; min-width: 0;
+}
 .form input, .form textarea {
+  display: block;
+  width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box;
   background: #242018; border: .5px solid #3a3428;
   color: #f4f0ea; border-radius: 6px;
   padding: 14px 16px; font-size: 13px;
-  font-family: inherit; transition: border-color 0.2s; width: 100%;
+  font-family: inherit; transition: border-color 0.2s;
 }
 .form input::placeholder, .form textarea::placeholder { color: #6b6158; }
 .form input:focus, .form textarea:focus { outline: none; border-color: #2a1f5e; }
@@ -225,7 +236,7 @@
   .services-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .devis-section { padding: 28px 16px; border-radius: 10px; }
-  .devis-section h2 { font-size: 28px; }
+  .devis-header h2 { font-size: 22px; }
   .service-block { padding: 20px 16px; }
   .item-label { font-size: 13px; }
   .item { grid-template-columns: 1fr auto; gap: 8px; }

@@ -145,9 +145,9 @@
 @keyframes aur { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(20px,-15px) scale(1.08)} }
 
 .page-hero-inner { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; }
-.kicker { display: inline-block; font-size: 10px; font-weight: 600; color: #2a1f5e; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 16px; }
-.page-hero-inner h1 { font-size: clamp(36px, 5vw, 52px); font-weight: 900; line-height: .98; letter-spacing: -.04em; color: #1a1612; margin-bottom: 16px; }
-.page-hero-inner h1 em { font-style: italic; font-weight: 300; color: #9a8e7e; }
+.kicker { display: inline-block; font-size: 10px; font-weight: 600; color: #C67A35; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 16px; }
+.page-hero-inner h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(48px, 7vw, 72px); font-weight: 700; line-height: 1; letter-spacing: .01em; color: #171412; margin-bottom: 16px; }
+.page-hero-inner h1 em { font-style: italic; font-weight: 400; color: #9a8e7e; }
 .hero-desc { font-size: 14px; color: #7a6e5e; line-height: 1.8; max-width: 460px; }
 
 .content { max-width: 1280px; margin: 0 auto; padding: 0 28px 80px; }

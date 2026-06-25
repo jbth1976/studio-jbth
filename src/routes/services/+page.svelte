@@ -20,6 +20,17 @@
     }
   }
 
+  let openFaq: number | null = null;
+
+  const faqs = [
+    { q: "Quels sont vos délais de réalisation ?", a: "Un site vitrine est livré en 2 à 4 semaines. Un logo en 5 à 10 jours. Une mise en page de livre en 1 à 3 semaines selon le volume. Les délais sont confirmés au devis." },
+    { q: "Comment se passe le paiement ?", a: "Un acompte de 50% est demandé au démarrage du projet. Le solde est réglé à la livraison. Je travaille par virement bancaire ou PayPal." },
+    { q: "Puis-je voir des exemples de vos travaux ?", a: "Oui, la page Projets présente mes réalisations en design, développement web et édition. N'hésitez pas à me contacter pour des exemples spécifiques à votre secteur." },
+    { q: "Proposez-vous des modifications après livraison ?", a: "Chaque prestation inclut un nombre de retours défini (généralement 2 à 3 allers-retours). Des modifications supplémentaires sont facturées au taux horaire." },
+    { q: "Travaillez-vous avec des clients à distance ?", a: "Oui, je travaille exclusivement à distance — en France et à l'international. Toute la communication se fait par email, visio ou messagerie selon votre préférence." },
+    { q: "Est-ce que vous vous occupez de la mise en ligne ?", a: "Oui, pour les sites web je gère l'hébergement, le nom de domaine et la mise en ligne si besoin. Je propose également la maintenance mensuelle pour garder votre site à jour." },
+  ];
+
   const services = [
     {
       cat: 'Développement web',
@@ -99,6 +110,29 @@
           </div>
         </div>
       {/each}
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <div class="section-head" style="margin-bottom: 32px;">
+        <div class="sline"></div>
+        <span class="slabel">Questions fréquentes</span>
+        <div class="sline"></div>
+      </div>
+
+      <div class="faq-list">
+        {#each faqs as faq, i}
+          <div class="faq-item" class:open={openFaq === i}>
+            <button class="faq-q" on:click={() => openFaq = openFaq === i ? null : i}>
+              <span>{faq.q}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            {#if openFaq === i}
+              <p class="faq-a">{faq.a}</p>
+            {/if}
+          </div>
+        {/each}
+      </div>
     </div>
 
     <!-- DEVIS -->
@@ -225,6 +259,25 @@
 .status-msg { font-size: 14px; padding: 16px 0; }
 .status-msg.success { color: #c8c0ff; }
 .status-msg.err { color: #f09595; }
+
+/* FAQ */
+.faq-section { margin-bottom: 48px; }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-bottom: .5px solid #D8D0C4; }
+.faq-q {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; padding: 20px 0; background: none; border: none; cursor: pointer;
+  text-align: left; font-family: 'Manrope', sans-serif;
+  font-size: 14px; font-weight: 600; color: #171412;
+}
+.faq-q:hover { color: #C67A35; }
+.faq-icon { flex-shrink: 0; transition: transform 0.3s ease; color: #C67A35; }
+.faq-item.open .faq-icon { transform: rotate(180deg); }
+.faq-a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px; color: #7a6e5e;
+  line-height: 1.8; padding-bottom: 20px; margin: 0;
+}
 
 @media (max-width: 900px) {
   .services-grid { grid-template-columns: 1fr; }

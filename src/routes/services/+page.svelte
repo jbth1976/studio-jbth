@@ -25,7 +25,7 @@
   const faqs = [
     { q: "Quels sont vos délais de réalisation ?", a: "Un site vitrine est livré en 2 à 4 semaines. Un logo en 5 à 10 jours. Une mise en page de livre en 1 à 3 semaines selon le volume. Les délais sont confirmés au devis." },
     { q: "Comment se passe le paiement ?", a: "Un acompte de 50% est demandé au démarrage du projet. Le solde est réglé à la livraison. Je travaille par virement bancaire ou PayPal." },
-    { q: "Puis-je voir des exemples de vos travaux ?", a: "Oui, la page Projets présente mes réalisations en design, développement web et édition. N'hésitez pas à me contacter pour des exemples spécifiques à votre secteur." },
+    { q: "Puis-je voir des exemples de vos travaux ?", a: "Oui, la page Projets présente une sélection de mes réalisations en design, développement web et édition. Certains projets restent confidentiels à la demande des clients — n'hésitez pas à me contacter directement pour des exemples adaptés à votre secteur." },
     { q: "Proposez-vous des modifications après livraison ?", a: "Chaque prestation inclut un nombre de retours défini (généralement 2 à 3 allers-retours). Des modifications supplémentaires sont facturées au taux horaire." },
     { q: "Travaillez-vous avec des clients à distance ?", a: "Oui, je travaille exclusivement à distance — en France et à l'international. Toute la communication se fait par email, visio ou messagerie selon votre préférence." },
     { q: "Est-ce que vous vous occupez de la mise en ligne ?", a: "Oui, pour les sites web je gère l'hébergement, le nom de domaine et la mise en ligne si besoin. Je propose également la maintenance mensuelle pour garder votre site à jour." },

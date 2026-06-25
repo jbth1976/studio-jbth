@@ -44,7 +44,7 @@
       items: [
         { label: 'Mise en page livre/ebook (prêt Kindle)', price: '220 €' },
         { label: 'Couverture de livre (2 propositions + modif)', price: '120 €' },
-        { label: 'Accompagnement autoédition (KDP / Ingram)', price: 'Sur devis' },
+        { label: 'Accompagnement autoédition (KDP / Instagram)', price: 'Sur devis' },
       ]
     },
     {
